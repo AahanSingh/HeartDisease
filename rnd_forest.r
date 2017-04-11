@@ -1,0 +1,5 @@
+library(randomForest)
+RndmFrstModel <- randomForest(as.factor(num) ~ ., data = train , ntree = 1000, importance = TRUE)
+RndmFrstPred <- predict(RndmFrstModel, test)
+print(eval(RndmFrstPred,test$num))
+accRF<-eval(RndmFrstPred,test$num)
